@@ -1,8 +1,6 @@
 package task;
 
-import Observer.Observer;
-import user.DeroUserController;
-import user.DeroUserModel;
+import observer.Observer;
 
 public class DeroTaskView implements Observer {
     private DeroTaskModel model;

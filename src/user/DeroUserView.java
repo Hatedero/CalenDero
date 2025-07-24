@@ -1,6 +1,6 @@
 package user;
 
-import Observer.Observer;
+import observer.Observer;
 
 public class DeroUserView implements Observer {
     private DeroUserModel model;

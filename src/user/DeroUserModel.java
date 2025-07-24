@@ -1,6 +1,6 @@
 package user;
 
-import Observer.Observable;
+import observer.Observable;
 import agenda.calendar.DeroCalendarModel;
 
 import java.util.Collections;

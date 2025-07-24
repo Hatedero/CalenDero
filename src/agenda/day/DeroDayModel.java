@@ -1,6 +1,6 @@
 package agenda.day;
 
-import Observer.Observable;
+import observer.Observable;
 import task.DeroTaskModel;
 
 import java.util.Collections;
@@ -17,6 +17,7 @@ public class DeroDayModel extends Observable {
 
     public void setDate(String date) {
         this.date = date;
+        notifyObservers();
     }
 
     public String getTitle() {
@@ -25,6 +26,7 @@ public class DeroDayModel extends Observable {
 
     public void setTitle(String title) {
         this.title = title;
+        notifyObservers();
     }
 
     public List<DeroTaskModel> getTasks() {
@@ -33,6 +35,7 @@ public class DeroDayModel extends Observable {
 
     public void setTasks(List<DeroTaskModel> tasks) {
         this.tasks = tasks;
+        notifyObservers();
     }
 
     public DeroDayModel(String title, String date, List<DeroTaskModel> tasks) {

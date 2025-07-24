@@ -1,11 +1,12 @@
 package agenda.calendar;
 
 import agenda.day.DeroDayModel;
+import observer.Observable;
 
 import java.util.Collections;
 import java.util.List;
 
-public class DeroCalendarModel {
+public class DeroCalendarModel extends Observable {
     private String title;
     private String description;
     private List<DeroDayModel> days;

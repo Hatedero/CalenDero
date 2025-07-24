@@ -1,35 +1,25 @@
 package agenda.day;
 
+import observer.Observer;
 import task.DeroTaskModel;
 
 import java.util.Collections;
 import java.util.List;
 
-public class DeroDayView {
-    private String title;
-    private String date;
-    private List<DeroTaskModel> tasks;
+public class DeroDayView implements Observer {
+    private DeroDayModel model;
+    private DeroDayController controller;
 
-    public DeroDayView(String title, String date, List<DeroTaskModel> tasks) {
-        this.title = title;
-        this.date = date;
-        this.tasks = tasks;
+    public String askData() {
+        String data = model.getTitle() + " " + model.getDate()
+                + "\n Tasks : ";
+        for(int i = 0; i < model.getTasks().size(); i++)
+            data = data + "\n" + model.getTasks().get(i).toString();
+        return data;
     }
 
-    public DeroDayView(String title, String date) {
-        this.title = title;
-        this.date = date;
-        this.tasks = Collections.emptyList();
-    }
-
-    public Boolean addTask(DeroTaskModel task) {
-        this.tasks.add(task);
-        return true;
-    }
-
-    public Boolean addTasks(List<DeroTaskModel> tasks) {
-        tasks.forEach(task ->
-                addTask(task));
-        return true;
+    @Override
+    public void update() {
+        System.out.println(askData());
     }
 }

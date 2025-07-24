@@ -1,6 +1,6 @@
 package task;
 
-import Observer.Observable;
+import observer.Observable;
 
 public class DeroTaskModel extends Observable {
     protected String title;
